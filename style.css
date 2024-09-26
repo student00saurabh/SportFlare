@@ -30,7 +30,7 @@
 
 .drop-down-meni{
 	padding: 10px;
-	box-shadow: 0px 2px 10px #ff6f00;
+	box-shadow: 0px 2px 10px #4169e1;
 }
 
 .footer-c{
@@ -46,10 +46,10 @@
 }
 
 .footer-h3{
-	color:#ff6f00;
+	color: darkblue;
 }
 .footer-ul{
-	color: #ff6f00;
+	color: #4169e1;
 }
 .footer-color{
 	padding-left: 10px;
@@ -57,12 +57,12 @@
 }
 .footer-color>a{
 	text-decoration: none;
-	color:#ff6f00;
+	color: darkblue;
 }
 .footer-color:hover{
 	background-color: #ffc107;
 	border-radius: 10px;
-	box-shadow: 0px 2px 10px #ff6f00;
+	box-shadow: 0px 2px 10px black;
 	transition-duration: 0.5s;
 	
 }
@@ -81,7 +81,7 @@
 	width: 96%;
 	padding: 10px;
 	margin: 10px;
-    border: 2px solid #ff6f00;
+    border: 2px solid #4169e1;
 }
 .images{
 	height: 400px;
@@ -107,7 +107,7 @@
 		padding: 10px;
 		margin: 22px;
 		margin-bottom: 10px;
-		border: 2px solid #ff6f00;
+		border: 2px solid #4169e1;
 		border-radius: 10px;
 	}
 	.card12{
@@ -135,7 +135,7 @@
 
 	/* footer */
 	footer{
-		background-color: #f9c7a0;
+		background-color: #4169e1;
 		padding: 10px;
 		text-align: left;
 		display: flex;
@@ -153,7 +153,7 @@
 		padding: 10px;
 		margin: 10px;
 		border-radius: 10px;
-		border: 2px solid #ff6f00;
+		border: 2px solid #4169e1;
 	}
 	.card12{
 		height: fit-content;
@@ -178,7 +178,7 @@
 
 	/* footer */
 	footer{
-		background-color: #f9c7a0;
+		background-color: #4169e1;
 		padding: 10px;
 		text-align: left;
 	}

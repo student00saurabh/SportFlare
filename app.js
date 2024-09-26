@@ -86,13 +86,15 @@ async function getData1() {
 			}else{
 			    let res = res1.data.teams;
 				for(r of res){
-					console.log(r);
+					console.log("team data",r);
 				}
 			}
 
 			if(res2.data.player == null){
 				console.log("players data not match");
 			}else{
+				let search_h1 = document.querySelector("h1");
+				search_h1.innerText= "Players: "
 			     let res = res2.data.player;
 				 for(r of res){
 					console.log(r);
@@ -183,7 +185,7 @@ async function getData1() {
 			}else{
 			    let res = res3.data.event;
 				for(r of res){
-					console.log(r);
+					console.log("Event1 data",r);
 				}
 			}
 
@@ -192,7 +194,12 @@ async function getData1() {
 			}else{
 			    let res = res4.data.event;
 				for(r of res){
-					console.log(r);
+
+					let search_h2 = document.createElement("h1");
+                     search_h2.className = "search-heading";
+					 search_h2.innerText = "Events:";
+					 
+					console.log("Event 2 data",r);
 				}
 			}
 
@@ -201,7 +208,7 @@ async function getData1() {
 			}else{
 			    let res = res5.data.venues;
 				for(r of res){
-					console.log(r);
+					console.log(" Venues data" ,r);
 				}
 			}
 
@@ -210,7 +217,7 @@ async function getData1() {
 			}else{
 			    let res = res6.data.countries;
 				for(r of res){
-					console.log(r);
+					console.log("Countries data",r);
 				}
 			}
 			
