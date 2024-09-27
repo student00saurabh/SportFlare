@@ -46,7 +46,7 @@
 }
 
 .footer-h3{
-	color: darkblue;
+	color:darkblue;
 }
 .footer-ul{
 	color: #4169e1;
@@ -66,10 +66,7 @@
 	transition-duration: 0.5s;
 	
 }
-.carousel-h-w{
-	height: 400px;
-	width: 100%;
-}
+
 .main-box-2{
 	display: none;
 }
@@ -91,6 +88,31 @@
 	height: 100px;
 	width: 100px;
 	background-position: cover;
+}
+
+.scroller-1{
+	display: none;
+}
+.scroller-2{
+	display: none;
+}
+
+.scroller-3{
+	display: none;
+}
+
+.scroller-4{
+	display: none;
+}
+
+.scroller-5{
+	display: none;
+}
+.scroller-6{
+	display: none;
+}
+.scroller-search{
+	display: none;
 }
 
 /* For Descktop */
@@ -132,6 +154,48 @@
 		
 	}
 
+	/* scroller */
+	.scroller-search{
+		height: 40px;
+		margin: 0;
+	}
+	.scroller-ul{
+		display: inline-block;
+		margin: 0;
+	}
+	.scroller-ul>li{
+		display: inline-block;
+		color: darkblue;
+	}
+	.scroller-ul>li:hover{
+		background-color: #ffc107;
+		border-radius: 10px;
+		transition-duration: 0.5s;
+	}
+    /* scroller */
+
+	/* carousal */
+	.carousel-bg{
+		background-color: #4169e1;
+		height: 400px;
+		width: fit-content;
+	}
+	.carouseel-image{
+		height: 400px;
+		width: 800px;
+	}
+	.carousel-font1{
+		font-size: 3rem;
+		font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		color: darkblue;
+		text-shadow: 2px 2px 2px white;
+	}
+	.carousel-font2{
+		font-size: 1.5rem;
+        color: darkblue;
+		text-shadow: 2px 2px 2px white;
+	}
+	/* carousel */
 
 	/* footer */
 	footer{
@@ -175,6 +239,45 @@
 		height: 350px;
 		width: 100%;
 	}
+
+
+	/* scroller */
+	.scroller-search{
+		height: 40px;
+		margin: 0;
+	}
+
+	.scroller-ul{
+		display: inline-block;
+		margin: 0;
+		overflow: auto;
+		white-space: nowrap;
+	}
+	.scroller-ul>li{
+		display: inline-block;
+		color: darkblue;
+	}
+	.scroller-ul>li:hover{
+		background-color: #ffc107;
+		border-radius: 10px;
+		transition-duration: 0.5s;
+	}
+    /* scroller */
+
+	/* carousel */
+	.carouseel-image{
+		height: 300px;
+	}
+	.carousel-font1{
+		font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		color: darkblue;
+		text-shadow: 2px 2px 2px white;
+	}
+	.carousel-font2{
+        color: darkblue;
+		text-shadow: 2px 2px 2px white;
+	}
+	/* carousel */
 
 	/* footer */
 	footer{

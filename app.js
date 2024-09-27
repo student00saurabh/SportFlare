@@ -30,6 +30,7 @@ let inp = document.querySelector("#search-input");
 
 btn1.addEventListener("click", async ()=>{
 	console.log("btn");
+	
 	let search = inp.value;
 	await getData3(search);
 })
@@ -105,11 +106,15 @@ async function getData1() {
                     let imgDiv = document.createElement("div");
 					card.appendChild(imgDiv);
 
-					let playerimg = document.createElement("img");
+					if(r.strCutout == undefined){
+						console.log(undefined);
+					}else{
+                    let playerimg = document.createElement("img");
 					playerimg.className = "images";
 					playerimg.setAttribute("src", r.strCutout);
 					playerimg.setAttribute("ait", "Image Not Found");
 					imgDiv.appendChild(playerimg);
+					}
                    
 					let ctCard = document.createElement("div");
 					ctCard.className = "card-content";
@@ -161,10 +166,12 @@ async function getData1() {
 					let ul1 = document.createElement("ul");
 					ctCard2.appendChild(ul1)
 					
-					let logoimg = document.createElement("img");
+					if(r.strThumb != undefined){
+                        let logoimg = document.createElement("img");
 					logoimg.className = "img-logo"
 					logoimg.setAttribute("src", r.strThumb);
 					ul1.appendChild(logoimg);
+					}
 
 					let li10 = document.createElement('li')
 					li10.innerText = r.strTeam;
