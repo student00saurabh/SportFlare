@@ -30,7 +30,6 @@ let inp = document.querySelector("#search-input");
 
 btn1.addEventListener("click", async ()=>{
 	console.log("btn");
-	
 	let search = inp.value;
 	await getData3(search);
 })
@@ -69,8 +68,8 @@ async function getData1() {
   }
 
   async function getData3(search) {
-	let mb2 = document.querySelector(".main-box-2");
-	mb2.style.display = "block";
+	let scrollerSearch = document.querySelector(".scroller-search");
+    scrollerSearch.style.display = "block";
 	let mb1 = document.querySelector(".main-box-1");
 	mb1.style.display = "none";
 	try {
@@ -81,24 +80,198 @@ async function getData1() {
 			let res4 = await axios.get(url[3]+search);
 			let res5 = await axios.get(url[4]+search);
 			let res6 = await axios.get(url[5]+search);
-
+          // first
 			if(res1.data.teams == null){
 				console.log("teams data not match");
 			}else{
+                 
+	            let mb2 = document.querySelector(".main-box-2");
+	             mb2.style.display = "block";
+
 			    let res = res1.data.teams;
+				let search_h1 = document.querySelector(".search-heading-1");
+				search_h1.style.display = "block";
+				search_h1.innerText= "Teams: ";
+
+				let scrollerLink1 = document.querySelector(".scroller-link-1");
+				scrollerLink1.style.display = "block"; 
+
 				for(r of res){
 					console.log("team data",r);
+                    let card = document.createElement("div");
+					card.className = "card1";
+                     mb2.appendChild(card);
+
+					 let imgDiv = document.createElement("div");
+					card.appendChild(imgDiv);
+
+					if(r.strBadge == undefined){
+						console.log(undefined);
+					}else{
+						let imgHeading = document.createElement("h3");
+						imgHeading.innerText = "Badge: ";
+						imgDiv.appendChild(imgHeading);
+
+                    let playerimg = document.createElement("img");
+					playerimg.className = "images-teams";
+					playerimg.setAttribute("src", r.strBadge);
+					playerimg.setAttribute("ait", "Image Not Found");
+					imgDiv.appendChild(playerimg);
+					}
+
+					let ctCard = document.createElement("div");
+					ctCard.className = "card-content";
+					card.appendChild(ctCard);
+
+					let h1 = document.createElement("h1");
+					h1.innerText = r.strTeam;
+					ctCard.appendChild(h1);
+
+					let ul = document.createElement("ul");
+                    ctCard.appendChild(ul);
+                    let li1 = document.createElement("li");
+					let li2 = document.createElement("li");
+					let li3 = document.createElement("li");
+					let li4 = document.createElement("li");
+					let li5 = document.createElement("li");
+					let li6 = document.createElement("li");
+					let li7 = document.createElement("li");
+					let li8 = document.createElement("li");
+					let li9 = document.createElement("li");
+
+					li1.innerText = `Alternat name: ${r.strTeamAlternate}`;
+					ul.appendChild(li1);
+					li2.innerText = `Country: ${r.strCountry}`;
+					ul.appendChild(li2);
+					li3.innerText = `Location: ${r.strLocation}`;
+					ul.appendChild(li3);
+					li4.innerText = `Sport:  ${r.strSport}`;
+					li4.style.color = "green";
+					ul.appendChild(li4);
+					li5.innerText = `Stadium: ${r.strStadium}`;
+					ul.appendChild(li5);
+                    li6.innerText = `Gender: ${r.strGender}`;
+					ul.appendChild(li6);
+                    li7.innerText = `Keywords: ${r.strKeywords}`;
+					ul.appendChild(li7);
+					li8.innerText = `Ethinic City: ${r.strLeague}`;
+					ul.appendChild(li8);
+					li9.innerText = `Team: ${r.strLeague2}`;
+					ul.appendChild(li9);
+
+					let ctCard2 = document.createElement("div");
+					ctCard2.className = "card-content"
+					card.appendChild(ctCard2);
+					let h4 = document.createElement("h4");
+					h4.innerText = "Fanarts";
+					ctCard2.appendChild(h4);
+					let ul1 = document.createElement("ul");
+					ctCard2.appendChild(ul1)
+					
+					if(r.strFanart1 != undefined){
+                        let logoimg1 = document.createElement("img");
+					logoimg1.className = "img-logo";
+
+					logoimg1.setAttribute("src", r.strFanart1);
+					ul1.appendChild(logoimg1);
+					}
+					if(r.strFanart2 != undefined){
+						let logoimg2 = document.createElement("img");
+						logoimg2.className = "img-logo";
+						logoimg2.setAttribute("src", r.strFanart2);
+					    ul1.appendChild(logoimg2);
+					}
+					if(r.strFanart3 != undefined){
+						let logoimg3 = document.createElement("img");
+						logoimg3.className = "img-logo";
+						logoimg3.setAttribute("src", r.strFanart3);
+					    ul1.appendChild(logoimg3);
+					}
+					if(r.strFanart4 != undefined){
+						let logoimg4 = document.createElement("img");
+						logoimg4.className = "img-logo";
+						logoimg4.setAttribute("src", r.strFanart4);
+					    ul1.appendChild(logoimg4);
+					}
+                     if(r.strBanner != undefined){
+						let li10 = document.createElement("li");
+						li10.innerText = "Banner";
+						ul1.appendChild(li10);
+						let logoimg5 = document.createElement("img");
+						logoimg5.className = "img-logo";
+						logoimg5.setAttribute("src", r.strBanner);
+					    ul1.appendChild(logoimg5);
+					}
+
+					let ctCard3 = document.createElement("div");
+					ctCard3.className = "card-content"
+					card.appendChild(ctCard3);
+					let h5 = document.createElement("h4");
+					h5.innerText = "Connection Links";
+					ctCard3.appendChild(h5);
+					let ul2 = document.createElement("ul");
+					ctCard3.appendChild(ul2)
+					if(r.strFacebook != undefined){
+						let li11 = document.createElement("li");
+						let a1 = document.createElement("a");
+						a1.setAttribute("href", r.strFacebook);
+						a1.innerText = "Facebook";
+						li11.appendChild(a1);
+						ul2.appendChild(li11);
+					}
+					if(r.strInstagram != undefined){
+						let li12 = document.createElement("li");
+						let a2 = document.createElement("a");
+						a2.setAttribute("href", r.strInstagram);
+						a2.innerText = "Instagram";
+						li12.appendChild(a2);
+						ul2.appendChild(li12);
+					}
+					if(r.strTwitter != undefined){
+						let li13 = document.createElement("li");
+						let a3 = document.createElement("a");
+						a3.setAttribute("href", r.strTwitter);
+						a3.innerText = "Twitter";
+						li13.appendChild(a3);
+						ul2.appendChild(li13);
+					}
+					if(r.strYoutube != undefined){
+						let li14 = document.createElement("li");
+						let a4 = document.createElement("a");
+						a4.setAttribute("href", r.strYoutube);
+						a4.innerText = "Youtube";
+						li14.appendChild(a4);
+						ul2.appendChild(li14);
+					}
+					if(r.strWebsite != undefined){
+						let li15 = document.createElement("li");
+						let a5 = document.createElement("a");
+						a5.setAttribute("href", r.strWebsite);
+						a5.innerText = "Website";
+						li15.appendChild(a5);
+						ul2.appendChild(li15);
+					}
+                    
+				
 				}
 			}
-
+			
+			// second
 			if(res2.data.player == null){
 				console.log("players data not match");
 			}else{
-				let search_h1 = document.querySelector("h1");
-				search_h1.innerText= "Players: "
+                
+				let mb2 = document.querySelector(".main-box-3");
+				mb2.style.display = "block";
+
+				let search_h1 = document.querySelector(".search-heading-2");
+				search_h1.style.display = "block";
+				search_h1.innerText= "Players: ";
+				let scrollerLink1 = document.querySelector(".scroller-link-2");
+				scrollerLink1.style.display = "block"; 
+
 			     let res = res2.data.player;
 				 for(r of res){
-					console.log(r);
 					let card = document.createElement("div");
 					card.className = "card1";
                      mb2.appendChild(card);

@@ -90,30 +90,48 @@
 	background-position: cover;
 }
 
-.scroller-1{
+.scroller-link-1{
 	display: none;
 }
-.scroller-2{
+.scroller-link-2{
+	display: none;
+}
+.scroller-link-3{
+	display: none;
+}
+.scroller-link-4{
+	display: none;
+}
+.scroller-link-5{
+	display: none;
+}
+.scroller-link-6{
 	display: none;
 }
 
-.scroller-3{
-	display: none;
-}
-
-.scroller-4{
-	display: none;
-}
-
-.scroller-5{
-	display: none;
-}
-.scroller-6{
-	display: none;
-}
 .scroller-search{
 	display: none;
 }
+
+ .search-heading-2{
+	display: none;
+ }
+ .search-heading-3{
+	display: none;
+ }
+ .search-heading-4{
+	display: none;
+ }
+ .search-heading-5{
+	display: none;
+ }
+ .search-heading-6{
+	display: none;
+ }
+ .images-teams{
+	height: 200px;
+	width: 200px;
+ }
 
 /* For Descktop */
 @media(min-width: 390px){
@@ -187,13 +205,17 @@
 	.carousel-font1{
 		font-size: 3rem;
 		font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-		color: darkblue;
-		text-shadow: 2px 2px 2px white;
+		color:#ffc107;
+		text-shadow: 2px 2px 2px black;
+		position: relative;
+		animation: leftAnimation 2s 1 ;
 	}
 	.carousel-font2{
 		font-size: 1.5rem;
-        color: darkblue;
-		text-shadow: 2px 2px 2px white;
+        color: aqua;
+		text-shadow: 2px 2px 2px black;
+		position: relative;
+		animation: rightAnimation 2s 1 ;
 	}
 	/* carousel */
 
@@ -270,12 +292,17 @@
 	}
 	.carousel-font1{
 		font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-		color: darkblue;
-		text-shadow: 2px 2px 2px white;
+		color:#ffc107;
+		font-size: 2rem;
+		text-shadow: 2px 2px 2px black;
+		position: relative;
+		animation: leftAnimation 2s 1 ;
 	}
 	.carousel-font2{
-        color: darkblue;
-		text-shadow: 2px 2px 2px white;
+        color:aqua;
+		text-shadow: 2px 2px 2px black;
+		position: relative;
+		animation: rightAnimation 2s 1 ;
 	}
 	/* carousel */
 
@@ -284,5 +311,27 @@
 		background-color: #4169e1;
 		padding: 10px;
 		text-align: left;
+	}
+}
+
+@keyframes leftAnimation{
+	0%{
+		opacity: 0;
+		left: -300px;
+	}
+	100%{
+		opacity: 1;
+		left: 0px;
+	}
+}
+
+@keyframes rightAnimation{
+	0%{
+		opacity: 0;
+		right: -300px;
+	}
+	100%{
+		opacity: 1;
+		right: 0;
 	}
 }
