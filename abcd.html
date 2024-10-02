@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #comment-box {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    textarea {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .comment {
+      background-color: #f1f1f1;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="comment-box">
+	   <div id="comments-section">
+		   <h4>Comments:</h4>
+	   </div>
+        <h3>Leave a Comment</h3>
+        <textarea id="commentText" placeholder="Write your comment here..."></textarea>
+        <button onclick="addComment()">Submit Comment</button>
+  </div>
+
+  <script>
+    function addComment() {
+      const commentText = document.getElementById('commentText').value;
+      if (commentText.trim()) {
+        const commentSection = document.getElementById('comments-section');
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.innerText = commentText;
+        commentSection.appendChild(newComment);
+        document.getElementById('commentText').value = ''; // Clear the input
+      }
+    }
+	
+
+
+	
+  </script>
+</body>
+</html>

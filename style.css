@@ -17,6 +17,8 @@
 	background-color: #ffc107;
     transition-duration: 0.5s;
 }
+
+
 .logo-name1{
 	color: #ffffff;
 	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -30,7 +32,8 @@
 
 .drop-down-meni{
 	padding: 10px;
-	box-shadow: 0px 2px 10px #4169e1;
+	background-color: #167e35;
+	box-shadow: 0px 2px 10px #167e35;
 }
 
 .footer-c{
@@ -49,7 +52,7 @@
 	color:darkblue;
 }
 .footer-ul{
-	color: #4169e1;
+	color: #167e35;
 }
 .footer-color{
 	padding-left: 10px;
@@ -69,16 +72,35 @@
 
 .main-box-2{
 	display: none;
+	background-color: #167e35;
 }
-.main-box-1{
+.main-box-3{
+	display: none;
+	background-color: #167e35;
+}
+.main-box-4{
+	display: none;
+	background-color: #167e35;
+}
+.main-box-5{
+	display: none;
+	background-color: #167e35;
+}
+.main-box-6{
+	display: none;
+	background-color: #167e35;
+}
+.main-box-7{
 	display: block;
+	background-color: #167e35;
 }
+
 .card{
 	height: fit-content;
 	width: 96%;
 	padding: 10px;
 	margin: 10px;
-    border: 2px solid #4169e1;
+    border: 2px solid #167e35;
 }
 .images{
 	height: 400px;
@@ -133,6 +155,19 @@
 	width: 200px;
  }
 
+.searching{
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+	color: darkblue;
+}
+
+.mini-logo{
+	height: 25px;
+	width: 35px;
+}
+
+
 /* For Descktop */
 @media(min-width: 390px){
 
@@ -147,9 +182,37 @@
 		padding: 10px;
 		margin: 22px;
 		margin-bottom: 10px;
-		border: 2px solid #4169e1;
+		border: 2px solid #167e35;
 		border-radius: 10px;
+		background-color: #ffc107;
 	}
+	.card2{
+		display: inline-block;
+		height: fit-content;
+		width: fit-content;
+		padding: 10px;
+		margin: 10px;
+		margin-bottom: 20px;
+		border-radius: 10px;
+		border: 2px solid white;
+		box-shadow: 0px 2px 8px black;
+		background-color: #167e35;
+	}
+
+	.card2:hover{
+		background-color: #ffc107;
+		box-shadow: 4px 20px 40px black;
+		transition-duration: 0.5s;
+	}
+	.other-contents{
+		display: flex;
+		height: fit-content;
+		width: 100%;
+		background-color: #167e35;
+		overflow: auto;
+		white-space: nowrap;
+	}
+	
 	.card12{
 		height: fit-content;
 		width: 96%;
@@ -162,9 +225,26 @@
 	}
 	.card-content{
 		height: fit-content;
-		width: 400px;
-		padding: 20px;
-		margin-left: 40px;
+		width: fit-content;
+		padding: 10px;
+	}
+	.card-content2{
+		height: fit-content;
+		width: fit-content;
+		padding: 5px;
+		display: flex;
+	}
+	.card-content2>ul{
+		border-radius: 5px;
+		border: 1px solid grey;
+		margin-left: 3px;
+		border-radius: 5px;
+		background-color: white;
+		border: 1px solid grey;
+	}
+	.card-content>ul>li{
+		list-style-type: none;
+
 	}
 	.images{
 		height: 400px;
@@ -194,7 +274,7 @@
 
 	/* carousal */
 	.carousel-bg{
-		background-color: #4169e1;
+		background-color: #167e35;
 		height: 400px;
 		width: fit-content;
 	}
@@ -212,8 +292,8 @@
 	}
 	.carousel-font2{
 		font-size: 1.5rem;
-        color: aqua;
-		text-shadow: 2px 2px 2px black;
+        color: lime;
+		text-shadow: 0px 2px 2px black;
 		position: relative;
 		animation: rightAnimation 2s 1 ;
 	}
@@ -221,7 +301,7 @@
 
 	/* footer */
 	footer{
-		background-color: #4169e1;
+		background-color: #167e35;
 		padding: 10px;
 		text-align: left;
 		display: flex;
@@ -239,8 +319,30 @@
 		padding: 10px;
 		margin: 10px;
 		border-radius: 10px;
-		border: 2px solid #4169e1;
+		border: 2px solid #167e35;
+		background-color: #ffc107;
 	}
+	.card2{
+		display: inline-block;
+		height: fit-content;
+		width: 94%;
+		padding: 10px;
+		margin: 10px;
+		border-radius: 10px;
+		border: 2px solid white;
+		box-shadow: 0px 2px 8px black;
+		background-color: #167e35;
+	}
+
+	.card2:hover{
+		background-color: #ffc107;
+		box-shadow: 4px 20px 40px black;
+		transition-duration: 0.5s;
+	}
+	.other-contents{
+		background-color: #167e35;
+	}
+
 	.card12{
 		height: fit-content;
 		width: 94%;
@@ -256,6 +358,18 @@
 		padding: 10px;
 		padding-top: 20px;
 		border-radius: 10px;
+	}
+
+	.card-content2{
+		height: fit-content;
+		width: fit-content;
+		padding: 5px;
+		display: flex;
+	}
+	.card-content2>ul{
+		border-radius: 5px;
+		border: 1px solid grey;
+		margin-left: 3px;
 	}
 	.images{
 		height: 350px;
@@ -299,7 +413,7 @@
 		animation: leftAnimation 2s 1 ;
 	}
 	.carousel-font2{
-        color:aqua;
+        color: lime;
 		text-shadow: 2px 2px 2px black;
 		position: relative;
 		animation: rightAnimation 2s 1 ;
@@ -308,7 +422,7 @@
 
 	/* footer */
 	footer{
-		background-color: #4169e1;
+		background-color: #167e35;
 		padding: 10px;
 		text-align: left;
 	}
