@@ -10,7 +10,7 @@
 </head>
 <body>
 	<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-	
+
     <nav class="navbar navbar-expand-lg "  style="background-color: #167e35">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -483,5 +483,10 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="app.js"></script>
+	<script>
+		var search = localStorage.getItem('userValue');
+		getData3(search);
+		</script>
+	<!-- <script src="app.js"></script> -->
 </body>
 </html>

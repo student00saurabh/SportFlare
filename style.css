@@ -4,7 +4,15 @@
 	padding: 0px;
 	color: darkblue;
 }
-
+#search-button>a{
+   text-decoration: none;
+   color: #ffc107;
+}
+#search-button>a:hover{
+	color: #167e35;
+	background-color: #ffc107;
+    transition-duration: 0.5s;
+}
 .nav-h{
 	color: darkblue;
 }

@@ -30,10 +30,17 @@ let inp = document.querySelector("#search-input");
 
 btn1.addEventListener("click", async ()=>{
 	console.log("btn");
+	storeValue()
 	let search = inp.value;
 	await getData3(search);
-
 })
+
+function storeValue() {
+    var input =inp.value;
+    localStorage.setItem('userValue', input);
+    window.location.href = 'search1.html';
+}
+
 
 let urls1  = [url10, url11, url12, url13, url14, url15, url16, url17, url18, url19, url20, url21, url22, url23,];
 let urls2 = [url7, url8];
