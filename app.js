@@ -32,7 +32,7 @@ btn1.addEventListener("click", async ()=>{
 	console.log("btn");
 	storeValue()
 	let search = inp.value;
-	await getData3(search);
+	//await getData3(search);
 })
 
 function storeValue() {
