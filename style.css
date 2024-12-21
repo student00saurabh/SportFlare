@@ -457,3 +457,24 @@
 		right: 0;
 	}
 }
+
+
+.container{
+	height: fit-content;
+	width: 380px;
+	padding: 20px;
+	margin: 10px;
+	border: 2px solid #167e35;
+	border-radius: 10px;
+	color: #167e35;
+	display: inline-block;
+}
+.container>ul>li{
+	list-style: none;
+}
+
+@media(max-width: 390px){
+	.container{
+       width: 340px;
+	}
+}
