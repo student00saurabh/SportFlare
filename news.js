@@ -1,16 +1,30 @@
-let ct = document.querySelector(".first-container");
-let n = 0;
-async function Series() {
+let ct1 = document.querySelector(".news-container");
+
+let mh1 = document.querySelector("#scrollspyHeading1");
+//let mh2 = document.querySelector("#scrollspyHeading1");
+let mh3 = document.querySelector("#scrollspyHeading3");
+let mh4 = document.querySelector("#scrollspyHeading4");
+let mh5 = document.querySelector("#scrollspyHeading5");
+let mh6 = document.querySelector("#scrollspyHeading6");
+let mh7 = document.querySelector("#scrollspyHeading7");
+
+let url = "";
+
+mh1.addEventListener("click", () => {
+  mh1.innerText = "Live News";
+  let n = 0;
+  url = `https://api.mediastack.com/v1/news?access_key=b0a94e7d97222626d1969a7225c0c4bc&limit=10&offset=${n}&categories=sports`;
+  LiveNews(url, n);
+});
+
+async function LiveNews(url, n) {
   try {
-    let res = await axios.get(
-      `https://api.mediastack.com/v1/news?access_key=b0a94e7d97222626d1969a7225c0c4bc&limit=10&offset=${n}&categories=sports`
-    );
+    let res = await axios.get(url);
     let rs = res.data.data;
     for (r of rs) {
-      console.log(r);
       let b = document.createElement("div");
       b.className = "news-container";
-      ct.appendChild(b);
+      ct1.appendChild(b);
       let h5 = document.createElement("h5");
       h5.innerText = r.title;
       b.appendChild(h5);
@@ -34,14 +48,13 @@ async function Series() {
     console.log("Error: ", e);
     return "Error !";
   }
+
   let btn = document.createElement("button");
   btn.innerText = "next";
-  ct.appendChild(btn);
+  ct1.appendChild(btn);
 
   btn.addEventListener("click", () => {
     n = n + 10;
-    Series();
+    LiveNews();
   });
 }
-
-Series();
