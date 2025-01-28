@@ -525,3 +525,14 @@ td,th{
 	background-size: cover;
 }
 }
+
+.see-in-detail{
+	color: #e4e7fb;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+.smimg{
+	height: 100px;
+	width: 100px;
+}
