@@ -36,14 +36,17 @@ async function players() {
       td1.innerText = num;
       td2.innerText = r.name;
       td3.innerText = r.country;
-      td4.innerHTML = `<button class = "detailed">See In Detailed</button>`;
+      td4.innerHTML = `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                   see in datail </button>`;
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
       tr.appendChild(td4);
-      td4.addEventListener("click", () => {
-        let id = r.id;
-        playerDetails(id);
+
+      let url2 = `https://api.cricapi.com/v1/players_info?apikey=4fb281f8-4a6c-4529-a79d-346c539f4d89&id=${r.id}`;
+      td4.addEventListener("click", async (moviepage) => {
+        let rs = await axios.get(url2);
+        playerDetails(rs);
       });
     }
   } catch (e) {
@@ -63,37 +66,29 @@ async function players() {
 
 players();
 
-async function playerDetails(id) {
-  try {
-    let res = await axios.get(
-      `https://api.cricapi.com/v1/players_info?apikey=4fb281f8-4a6c-4529-a79d-346c539f4d89&id=${id}`
-    );
-    let r = res.data.data;
-    console.log(r);
-    let mh1 = document.querySelector("#staticBackdropLabel");
-    mh1.innerText = r.name;
-    let md = document.querySelector(".modal-body");
-    md.innerHTML = "";
-    let bkdpath = document.createElement("img");
-    bkdpath.className = "smimg";
-    bkdpath.setAttribute("src", r.playerImg);
-    md.appendChild(bkdpath);
-    let ul = document.createElement("ul");
-    md.appendChild(ul);
-    let li1 = document.createElement("li");
-    let li2 = document.createElement("li");
-    let li3 = document.createElement("li");
-    let li4 = document.createElement("li");
-    li1.innerText = `Country: ${r.country}`;
-    li2.innerText = `Role: ${r.role}`;
-    li3.innerText = `Batting Style : ${r.battingStyle}`;
-    li4.innerText = `Date Of Birth: ${r.bateOfBirth}`;
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-    ul.appendChild(li4);
-  } catch (e) {
-    console.log("Error: ", e);
-    return "Error !";
-  }
+async function playerDetails(rs) {
+  let r = rs.data.data;
+  console.log(r);
+  let mh1 = document.querySelector("#staticBackdropLabel");
+  mh1.innerText = r.name;
+  let md = document.querySelector(".modal-body");
+  md.innerHTML = "";
+  let bkdpath = document.createElement("img");
+  bkdpath.className = "smimg";
+  bkdpath.setAttribute("src", r.playerImg);
+  md.appendChild(bkdpath);
+  let ul = document.createElement("ul");
+  md.appendChild(ul);
+  let li1 = document.createElement("li");
+  let li2 = document.createElement("li");
+  let li3 = document.createElement("li");
+  let li4 = document.createElement("li");
+  li1.innerText = `Country: ${r.country}`;
+  li2.innerText = `Role: ${r.role}`;
+  li3.innerText = `Batting Style : ${r.battingStyle}`;
+  li4.innerText = `Date Of Birth: ${r.bateOfBirth}`;
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  ul.appendChild(li3);
+  ul.appendChild(li4);
 }
